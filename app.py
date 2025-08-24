@@ -1,22 +1,24 @@
+# app.py (The Lean and Fast Version)
+
 import pandas as pd
 import dash
-from dash import dcc, html, Input, Output, State
+from dash import dcc, html, Input, Output
 import dash_bootstrap_components as dbc
 import plotly.express as px
 
 # --- Configuration & Setup ---
 APP_THEME = dbc.themes.LUX
 
-# --- ** NEW: Load FAST Pre-processed Data on App Startup ** ---
-# Reading from Parquet is thousands of times faster than processing the CSV.
+# --- ** Load FAST Pre-processed Data on App Startup ** ---
 try:
     sales_df = pd.read_parquet('assets/sales_data.parquet')
     rfm_df = pd.read_parquet('assets/rfm_data.parquet')
 except FileNotFoundError:
-    print("ERROR: Processed data files not found. Please run 'preprocess.py' first.")
+    print("FATAL ERROR: Processed data files not found in 'assets/' folder.")
+    print("Please run 'preprocess.py' first to generate these files.")
     exit()
 
-# Convert date columns upon loading
+# Convert date columns upon loading for proper filtering
 sales_df['InvoiceYearMonth'] = pd.to_datetime(sales_df['InvoiceYearMonth'])
 
 # --- Initialize the Dash App ---
@@ -25,7 +27,6 @@ server = app.server
 
 # --- App Layout ---
 app.layout = dbc.Container(fluid=True, className="p-4 bg-light", children=[
-    # Header
     dbc.Row([
         dbc.Col(html.H1("E-commerce Performance Dashboard", className="text-primary"), md=8),
         dbc.Col([
@@ -39,7 +40,6 @@ app.layout = dbc.Container(fluid=True, className="p-4 bg-light", children=[
         ], md=4)
     ], align="center", className="mb-4"),
 
-    # Main Tabbed Interface
     dbc.Tabs(id="dashboard-tabs", active_tab="tab-overview", children=[
         dbc.Tab(label="Global Overview", tab_id="tab-overview"),
         dbc.Tab(label="Product Analysis", tab_id="tab-products"),
@@ -59,7 +59,6 @@ def render_tab_content(active_tab, selected_country):
     if not active_tab or not selected_country:
         return "Loading..."
 
-    # Filter sales data - this is now the only "heavy" work in the callback
     filtered_sales = sales_df[sales_df['Country'] == selected_country]
     template = "plotly_white"
 
