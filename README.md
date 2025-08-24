@@ -33,7 +33,7 @@ This project was built to demonstrate a full data analysis pipeline, from cleani
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/your-username/ecommerce-dashboard.git
+    git clone https://github.com/yobralangat/ecommerce-dashboard.git
     cd ecommerce-dashboard
     ```
 
