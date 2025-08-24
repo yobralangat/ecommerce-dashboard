@@ -1,6 +1,7 @@
 # E-commerce Customer Segmentation Dashboard
+<img width="1320" height="606" alt="dashboard-screenshot" src="https://github.com/user-attachments/assets/fb66616b-9384-4948-96c4-5486a6bb51c5" />
 
-![Dashboard Screenshot](<URL_TO_YOUR_SCREENSHOT_HERE>)  <!-- Optional: Add a screenshot of your app -->
+![Dashboard Screenshot](<img width="1320" height="606" alt="dashboard-screenshot" src="https://github.com/user-attachments/assets/fb66616b-9384-4948-96c4-5486a6bb51c5" />) 
 
 An interactive web application designed to analyze customer behavior from a raw e-commerce sales log. This dashboard turns transactional data into strategic insights by performing RFM (Recency, Frequency, Monetary) analysis to identify and segment key customer groups.
 
@@ -32,7 +33,7 @@ This project was built to demonstrate a full data analysis pipeline, from cleani
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/your-username/ecommerce-dashboard.git
+    git clone https://github.com/yobralangat/ecommerce-dashboard.git
     cd ecommerce-dashboard
     ```
 
