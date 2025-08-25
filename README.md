@@ -27,7 +27,7 @@ This project was built to demonstrate a full data analysis pipeline, from cleani
 *   **Data Manipulation:** Pandas
 *   **Dashboard Framework:** Plotly Dash & Dash Bootstrap Components
 *   **Data Visualization:** Plotly Express
-*   **Deployment:** Gunicorn / Railway (or your hosting service)
+*   **Deployment:** Gunicorn / Railway
 
 ---
 
