@@ -1,3 +1,5 @@
+[![Live App](https://img.shields.io/badge/Live-App-brightgreen?style=for-the-badge)](https://ecommerce-dashboard-production-46ed.up.railway.app/)
+
 # E-commerce Customer Segmentation Dashboard
 <img width="1320" height="606" alt="dashboard-screenshot" src="https://github.com/user-attachments/assets/fb66616b-9384-4948-96c4-5486a6bb51c5" />
 
